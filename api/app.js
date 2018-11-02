@@ -4,7 +4,8 @@ const app = express();
 
 require('./config/database');
 const middlewaresConfig = require('./config/middlewares');
-const constants = require('./config/constants');
+//const constants = require('./config/constants');
+import constants from './config/constants';
 
 console.log(process.env.NODE_ENV)
 console.log(constants);
