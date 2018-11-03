@@ -50,6 +50,7 @@
   "dependencies": {
     "apn": "^3.0.0-alpha1",
     "aws-sdk": "^2.305.0",
+    "bcrypt": "^3.0.2",
     "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.17.1",
     "chalk": "^2.3.0",

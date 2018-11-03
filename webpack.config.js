@@ -1,0 +1,36 @@
+const nodeExternals = require('webpack-node-externals');
+const path = require('path');
+
+module.exports = {
+  target: 'node',
+  externals: [nodeExternals()],
+  entry: {
+    'index': './index.js',
+  },
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: '[name].bundle.js',
+    libraryTarget: 'commonjs2'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: 'babel-loader'
+      },
+      {
+        test: /\.(p8|png)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: '/'
+            }  
+          }
+        ]
+      }
+    ],
+  },
+}

@@ -4,30 +4,15 @@ const app = express();
 
 require('./config/database');
 const middlewaresConfig = require('./config/middlewares');
-//const constants = require('./config/constants');
 import constants from './config/constants';
 
-console.log(process.env.NODE_ENV)
-console.log(constants);
-
-
-const productsRoute = require('./routes/products');
+console.log(process.env.NODE_ENV);
+console.log(constants.MONGO_URL);
+import ApiRoutes from './routes';
 
 // Wrap all the middlewares with the server
 middlewaresConfig(app);
 // Routes...
-app.use('/v1/products', productsRoute);
-
-app.use((req, res, next) => {
-    const error = new Error('Not Found');
-    error.status = 404;
-    next(error);
-})
-app.use((error, req, res, next) => {
-    res.status(error.status || 500);
-    res.json({
-        message: error.message,
-    });
-})
+app.use('/v1', ApiRoutes);
 
 module.exports = app;
