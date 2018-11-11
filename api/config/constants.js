@@ -106,7 +106,7 @@ const testConfig = {
 
 const prodConfig = {
   JWT_SECRET: process.env.JWT_SECRET_PROD,
-  MONGO_URL: process.env.MONGO_URL_PROD,
+  MONGO_URL: "mongodb://vijay:vijay123@cluster0-shard-00-00-bvm6m.mongodb.net:27017,cluster0-shard-00-01-bvm6m.mongodb.net:27017,cluster0-shard-00-02-bvm6m.mongodb.net:27017/Tabtor?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true",
 };
 
 const defaultConfig = {

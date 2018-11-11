@@ -43,7 +43,7 @@ export function create(req, res, next) {
             }
         })
         .catch(err => {
-            res.status(500).json({
+           return res.status(500).json({
                 message: err.message
             })
         })
@@ -59,7 +59,7 @@ export function remove(req, res, next) {
             })
         })
         .catch(err => {
-            res.status(500).json({
+           return res.status(500).json({
                 message: err.message
             })
         })
