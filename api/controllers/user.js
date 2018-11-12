@@ -64,3 +64,19 @@ export function remove(req, res, next) {
             })
         })
 }
+
+
+export function userList(req, res, next) {
+    User.find({})
+    .exec()
+    .then(users => {
+        return res.status(200).json({
+            userslist: users
+        })
+    })
+    .catch(err => {
+        return res.status(500).json({
+             message: err.message
+         })
+     })
+}
