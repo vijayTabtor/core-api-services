@@ -1,6 +1,6 @@
 
 import mongoose from 'mongoose';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcrypt-nodejs';
 import User from '../models/User';
 
 
